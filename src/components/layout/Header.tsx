@@ -67,7 +67,7 @@ export function Header() {
                 JJ LIGHT
               </span>
               <span
-                className="text-[11px] lg:text-[12px] italic font-medium text-muted-foreground leading-tight"
+                className="text-[10px] lg:text-[11px] font-medium text-muted-foreground leading-tight"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 A Lighting Company
@@ -121,32 +121,9 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg border-b border-border">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-background/90 backdrop-blur-lg border-b border-border">
             <nav className="flex flex-col py-6 px-6">
               {/* Mobile Logo & Tagline */}
-              <div className="pb-6 mb-4 border-b border-border">
-                <Link to="/" className="inline-flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)} aria-label="JJ LIGHT Home">
-                  <img 
-                    src={logoImg} 
-                    alt="JJ LIGHT Logo" 
-                    className="h-13 w-auto"
-                  />
-                  <div className="flex flex-col items-start text-left">
-                    <span
-                      className="font-bold uppercase text-lg text-foreground"
-                      style={{ fontFamily: 'Arial, sans-serif' }}
-                    >
-                      JJ LIGHT
-                    </span>
-                    <span
-                      className="text-[10px] italic font-medium text-muted-foreground leading-tight"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
-                    >
-                      A Lighting Company
-                    </span>
-                  </div>
-                </Link>
-              </div>
               {navLinks.map((link) => (
                 link.href.startsWith('#') ? (
                   <a
