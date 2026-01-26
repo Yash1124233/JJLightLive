@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { MessageCircle } from 'lucide-react';
 
 // Product images
 import aquaImg from '@/assets/products/aqua.png';
@@ -81,6 +78,10 @@ import ledpanelImg from '@/assets/products/ledpanel.png';
 import glossierImg from '@/assets/products/glossier.png';
 import deltaproImg from '@/assets/products/deltapro.png';
 import ceraImg from '@/assets/products/cera.png';
+
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { MessageCircle } from 'lucide-react';
 
 
 type ProductCategory = 'all' | 'decorative' | 'architectural' | 'outdoor' | 'custom' | 'surface' | 'panel' | 'trimless';
