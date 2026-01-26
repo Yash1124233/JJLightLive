@@ -47,7 +47,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a 
-                href="#" 
+                href="https://www.instagram.com/jjlight.in?igsh=d2pyaDRteXZwbHRl" 
                 className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-champagne hover:text-champagne transition-colors"
               >
                 <Instagram className="w-5 h-5" />
@@ -59,7 +59,7 @@ export function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href="mailto:hello@jjlight.com" 
+                href="mailto:jjlight.in@gmail.com" 
                 className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-champagne hover:text-champagne transition-colors"
               >
                 <Mail className="w-5 h-5" />
