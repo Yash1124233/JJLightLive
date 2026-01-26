@@ -19,6 +19,38 @@ import ksb8 from '@/assets/projects/KSB8.jpeg';
 import ksb9 from '@/assets/projects/KSB9.jpeg';
 import ksb10 from '@/assets/projects/KSB10.jpeg';
 import ksb11 from '@/assets/projects/KSB11.jpeg';
+import hech1 from '@/assets/projects/HECH1.jpeg';
+import hech2 from '@/assets/projects/HECH2.jpeg';
+import hech3 from '@/assets/projects/HECH3.jpeg';
+import hech4 from '@/assets/projects/HECH4.jpeg';
+import hech5 from '@/assets/projects/HECH5.jpeg';
+import hech6 from '@/assets/projects/HECH6.jpeg';
+import hech7 from '@/assets/projects/HECH7.jpeg';
+import l1 from '@/assets/projects/L1.jpeg';
+import l2 from '@/assets/projects/L2.jpeg';
+import l3 from '@/assets/projects/L3.jpeg';
+import l4 from '@/assets/projects/L4.jpeg';
+import l5 from '@/assets/projects/L5.jpeg';
+import l6 from '@/assets/projects/L6.jpeg';
+import l7 from '@/assets/projects/L7.jpeg';
+import l8 from '@/assets/projects/L8.jpeg';
+import l9 from '@/assets/projects/L9.jpeg';
+import l10 from '@/assets/projects/L10.jpeg';
+import l11 from '@/assets/projects/L11.jpeg';
+import l12 from '@/assets/projects/L12.jpeg';
+import g1 from '@/assets/projects/G1.jpeg';
+import g2 from '@/assets/projects/G2.jpeg';
+import g3 from '@/assets/projects/G3.jpeg';
+import g4 from '@/assets/projects/G4.jpeg';
+import g5 from '@/assets/projects/G5.jpeg';
+import g6 from '@/assets/projects/G6.jpeg';
+import g7 from '@/assets/projects/G7.jpeg';
+import g8 from '@/assets/projects/G8.jpeg';
+import g9 from '@/assets/projects/G9.jpeg';
+import g10 from '@/assets/projects/G10.jpeg';
+import g11 from '@/assets/projects/G11.jpeg';
+import g12 from '@/assets/projects/G12.jpeg';
+import g13 from '@/assets/projects/G13.jpeg';
 
 
 type ProjectCategory = 'all' | 'residential' | 'commercial' | 'architectural' | 'custom';
@@ -53,7 +85,7 @@ const projects: Project[] = [
     categoryLabel: 'Commercial Lighting',
     location: 'Private Villa',
     description: 'Sophisticated commercial lighting design featuring layered illumination that enhances the architectural features while maintaining optimal functionality for hospitality environments.',
-    gallery: [project2, project1, project4],
+    gallery: [project2, hech1, hech2, hech3, hech4, hech5, hech6, hech7],
   },
   {
     id: 'project-3',
@@ -63,7 +95,7 @@ const projects: Project[] = [
     categoryLabel: 'Residential Lighting',
     location: 'Luxury Apartment',
     description: 'Premium residential lighting solution that balances functional illumination with atmospheric design, creating a space that adapts to different moods and occasions.',
-    gallery: [project3, project5, project6],
+    gallery: [project3, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12],
   },
   {
     id: 'project-4',
@@ -73,7 +105,7 @@ const projects: Project[] = [
     categoryLabel: 'Architectural Lighting',
     location: 'Designer Home',
     description: 'An architectural lighting masterpiece that emphasizes clean lines and spatial definition. Each fixture is positioned to highlight the building\'s unique structural elements.',
-    gallery: [project4, project7, project8],
+    gallery: [project4, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13],
   },
   {
     id: 'project-5',
@@ -257,11 +289,11 @@ export function Projects() {
             <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-32">
               {/* Gallery */}
               <div className="relative mb-12 lg:mb-16">
-                <div className="aspect-[16/10] lg:aspect-[21/9] overflow-hidden rounded-sm">
+                <div className="aspect-[16/10] lg:aspect-[21/9] overflow-hidden rounded-sm bg-secondary/20 flex items-center justify-center">
                   <img
                     src={selectedProject.gallery[currentImageIndex]}
                     alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
 
@@ -324,14 +356,14 @@ export function Projects() {
                       <button
                         key={idx}
                         onClick={() => setCurrentImageIndex(idx)}
-                        className={`flex-shrink-0 w-32 h-24 rounded-sm overflow-hidden border-2 transition-colors ${
+                        className={`flex-shrink-0 w-32 h-24 rounded-sm overflow-hidden border-2 transition-colors bg-secondary/20 flex items-center justify-center ${
                           idx === currentImageIndex ? 'border-primary' : 'border-transparent hover:border-border'
                         }`}
                       >
                         <img
                           src={img}
                           alt={`Thumbnail ${idx + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       </button>
                     ))}
