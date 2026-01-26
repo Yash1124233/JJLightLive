@@ -51,9 +51,19 @@ import g10 from '@/assets/projects/G10.jpeg';
 import g11 from '@/assets/projects/G11.jpeg';
 import g12 from '@/assets/projects/G12.jpeg';
 import g13 from '@/assets/projects/G13.jpeg';
+import c1 from '@/assets/projects/C1.jpeg';
+import c2 from '@/assets/projects/C2.jpeg';
+import c3 from '@/assets/projects/C3.jpeg';
+import c4 from '@/assets/projects/C4.jpeg';
+import s1 from '@/assets/projects/S1.mp4';
 
 
 type ProjectCategory = 'all' | 'residential' | 'commercial' | 'architectural' | 'custom';
+
+interface GalleryMedia {
+  src: string;
+  type: 'image' | 'video';
+}
 
 interface Project {
   id: string;
@@ -63,7 +73,7 @@ interface Project {
   categoryLabel: string;
   location: string;
   description: string;
-  gallery: string[];
+  gallery: (string | GalleryMedia)[];
 }
 
 const projects: Project[] = [
@@ -115,7 +125,7 @@ const projects: Project[] = [
     categoryLabel: 'Custom Installation',
     location: 'Premium Residence',
     description: 'A bespoke lighting installation featuring custom-designed fixtures that complement the interior\'s unique character. Every element crafted to precise specifications.',
-    gallery: [project5, project1, project3],
+    gallery: [project5, c1, c2, c3, c4],
   },
   {
     id: 'project-6',
@@ -125,7 +135,7 @@ const projects: Project[] = [
     categoryLabel: 'Custom Installation',
     location: 'Showroom',
     description: 'Statement lighting that doubles as art. This custom installation creates a focal point that transforms the entire spatial experience.',
-    gallery: [project6, project2, project4],
+    gallery: [project6, { src: s1, type: 'video' }],
   },
   {
     id: 'project-7',
@@ -290,11 +300,28 @@ export function Projects() {
               {/* Gallery */}
               <div className="relative mb-12 lg:mb-16">
                 <div className="aspect-[16/10] lg:aspect-[21/9] overflow-hidden rounded-sm bg-secondary/20 flex items-center justify-center">
-                  <img
-                    src={selectedProject.gallery[currentImageIndex]}
-                    alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
-                    className="w-full h-full object-contain"
-                  />
+                  {(() => {
+                    const currentMedia = selectedProject.gallery[currentImageIndex];
+                    const mediaData = typeof currentMedia === 'string' ? { src: currentMedia, type: 'image' } : currentMedia;
+                    
+                    if (mediaData.type === 'video') {
+                      return (
+                        <video
+                          src={mediaData.src}
+                          controls
+                          className="w-full h-full object-contain"
+                        />
+                      );
+                    }
+                    
+                    return (
+                      <img
+                        src={mediaData.src}
+                        alt={`${selectedProject.title} - Item ${currentImageIndex + 1}`}
+                        className="w-full h-full object-contain"
+                      />
+                    );
+                  })()}
                 </div>
 
                 {/* Gallery Navigation */}
@@ -352,21 +379,39 @@ export function Projects() {
               {selectedProject.gallery.length > 1 && (
                 <div className="mt-12 pt-12 border-t border-border">
                   <div className="flex gap-4 overflow-x-auto pb-4">
-                    {selectedProject.gallery.map((img, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentImageIndex(idx)}
-                        className={`flex-shrink-0 w-32 h-24 rounded-sm overflow-hidden border-2 transition-colors bg-secondary/20 flex items-center justify-center ${
-                          idx === currentImageIndex ? 'border-primary' : 'border-transparent hover:border-border'
-                        }`}
-                      >
-                        <img
-                          src={img}
-                          alt={`Thumbnail ${idx + 1}`}
-                          className="w-full h-full object-contain"
-                        />
-                      </button>
-                    ))}
+                    {selectedProject.gallery.map((media, idx) => {
+                      const mediaData = typeof media === 'string' ? { src: media, type: 'image' } : media;
+                      
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentImageIndex(idx)}
+                          className={`flex-shrink-0 w-32 h-24 rounded-sm overflow-hidden border-2 transition-colors bg-secondary/20 flex items-center justify-center relative ${
+                            idx === currentImageIndex ? 'border-primary' : 'border-transparent hover:border-border'
+                          }`}
+                        >
+                          {mediaData.type === 'video' ? (
+                            <>
+                              <video
+                                src={mediaData.src}
+                                className="w-full h-full object-contain"
+                              />
+                              <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                                  <div className="w-0 h-0 border-l-5 border-l-white border-t-3 border-t-transparent border-b-3 border-b-transparent ml-1" />
+                                </div>
+                              </div>
+                            </>
+                          ) : (
+                            <img
+                              src={mediaData.src}
+                              alt={`Thumbnail ${idx + 1}`}
+                              className="w-full h-full object-contain"
+                            />
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               )}
