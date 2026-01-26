@@ -35,7 +35,7 @@ import battlerImg from '@/assets/products/Battler.png';
 import coralImg from '@/assets/products/Coral.png';
 import jawaImg from '@/assets/products/Jawa.png';
 import zoomImg from '@/assets/products/Zoom.png';
-import nebulaImg from '@/assets/products/Nebula.png';
+import nebulaImg from '@/assets/products/nebula.png';
 import smps1Img from '@/assets/products/smps1.png';
 import smps2Img from '@/assets/products/smps2.png';
 import harmonyImg from '@/assets/products/harmony.png';
