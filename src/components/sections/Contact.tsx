@@ -91,8 +91,10 @@ export function Contact() {
                 <div>
                   <p className="text-foreground font-medium mb-1">Visit Our Showroom</p>
                   <p className="text-muted-foreground text-sm">
-                    123 Design District, Creative Avenue<br />
-                    Mumbai, Maharashtra 400001
+                   24, DWARKESH INDUSTRIAL SOCIETY,<br />
+                    VELOBA TILES STREET,<br />
+                    NR NAVJIVAN CIRCLE UDHNA MAGDALLA ROAD,<br />
+                    SURAT-395017 GUJARAT, INDIA
                   </p>
                 </div>
               </div>
@@ -127,7 +129,7 @@ export function Contact() {
               <p className="label-uppercase text-muted-foreground mb-4">Follow Us</p>
               <div className="flex gap-4">
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/jjlight.in?igsh=d2pyaDRteXZwbHRl" 
                   className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
                 >
                   <Instagram className="w-5 h-5" />

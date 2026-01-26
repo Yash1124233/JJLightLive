@@ -7,7 +7,17 @@ import project4 from '@/assets/projects/project-4.jpg';
 import project5 from '@/assets/projects/project-5.jpg';
 import project6 from '@/assets/projects/project-6.jpg';
 import project7 from '@/assets/projects/project-7.jpg';
-import project8 from '@/assets/projects/project-8.jpg';
+import KSB1 from '@/assets/projects/KSB1.jpeg';
+import KSB2 from '@/assets/projects/KSB2.jpeg';
+import KSB3 from '@/assets/projects/KSB3.jpeg';
+import KSB4 from '@/assets/projects/KSB4.jpeg';
+import KSB5 from '@/assets/projects/KSB5.jpeg';
+import KSB6 from '@/assets/projects/KSB6.jpeg';
+import KSB7 from '@/assets/projects/KSB7.jpeg';
+import KSB8 from '@/assets/projects/KSB8.jpeg';
+import KSB9 from '@/assets/projects/KSB9.jpeg';
+import KSB10 from '@/assets/projects/KSB10.jpeg';
+import KSB11 from '@/assets/projects/KSB11.jpeg';
 
 type ProjectCategory = 'all' | 'residential' | 'commercial' | 'architectural' | 'custom';
 
@@ -24,14 +34,14 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 'project-1',
-    image: project1,
+    id: 'KSB-Project',
+    image: KSB4,
     title: 'Ambient Living Space',
     category: 'residential',
     categoryLabel: 'Residential Lighting',
     location: 'Modern Residence, Surat',
     description: 'A carefully curated lighting design that transforms the living space into a warm, inviting environment. The combination of ambient and accent lighting creates depth and visual interest throughout the space.',
-    gallery: [project1, project2, project3],
+    gallery: [KSB1, KSB2, KSB3, KSB4, KSB5, KSB6, KSB7, KSB8, KSB9, KSB10, KSB11],
   },
   {
     id: 'project-2',
