@@ -12,7 +12,7 @@ import linenProImg from '@/assets/products/linen-pro.png';
 import trimlessRioImg from '@/assets/products/trimless-rio.png';
 import butterflyImg from '@/assets/products/butterfly.png';
 import cdoreImg from '@/assets/products/cdore.png';
-import experiaImg from '@/assets/products/experia.png';
+import experiaImg from '@/assets/products/Experia.png';
 import brezzaImg from '@/assets/products/Brezza.png';
 import rosellaImg from '@/assets/products/Rosella.png';
 import glanzaImg from '@/assets/products/Glanza.png';
