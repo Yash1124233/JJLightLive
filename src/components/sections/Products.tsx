@@ -1410,15 +1410,15 @@ export function Products() {
               key={product.id} 
               className="bg-background border border-border rounded-sm overflow-hidden"
             >
-              <div className="grid lg:grid-cols-2 gap-0">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 {/* Left Side - Product Info */}
-                <div className="p-8 lg:p-12 xl:p-16 flex flex-col justify-center">
+                <div className="p-6 sm:p-8 lg:p-12 xl:p-16 flex flex-col justify-center min-w-0">
                   {/* Category & Model */}
                   <div className="mb-6">
                     <span className="label-uppercase text-primary/60 text-xs block mb-2">
                       {product.categoryLabel}
                     </span>
-                    <h3 className="font-serif text-3xl lg:text-4xl xl:text-5xl font-light text-foreground mb-2">
+                    <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-foreground mb-2 break-words">
                       {product.name}
                     </h3>
                     <span className="text-muted-foreground text-sm tracking-wider">
@@ -1428,11 +1428,11 @@ export function Products() {
 
                   {/* Product Image */}
                   {product.image && (
-                    <div className="mb-8">
+                    <div className="mb-8 flex justify-center overflow-hidden">
                       <img 
                         src={product.image} 
                         alt={`${product.name} - ${product.model}`}
-                        className="w-full max-w-xs mx-auto h-auto object-contain"
+                        className="w-full max-w-xs h-auto object-contain"
                       />
                     </div>
                   )}
@@ -1457,7 +1457,7 @@ export function Products() {
                   </div>
 
                   {/* Feature Icons */}
-                  <div className="flex flex-wrap gap-6 mb-8">
+                  <div className="flex flex-wrap gap-4 sm:gap-6 mb-8">
                     <div className="text-center">
                       <span className="text-lg font-semibold text-foreground block">{product.features.saving}</span>
                       <span className="text-xs text-muted-foreground uppercase tracking-wider">Saving</span>
@@ -1479,14 +1479,14 @@ export function Products() {
                     <Button 
                       variant="luxury" 
                       onClick={handleInquiry}
-                      className="flex-1"
+                      className="flex-1 text-sm sm:text-base"
                     >
                       Request Details
                     </Button>
                     <Button 
                       variant="luxuryOutline" 
                       onClick={() => handleWhatsAppInquiry(product.name, product.model)}
-                      className="flex-1"
+                      className="flex-1 text-sm sm:text-base"
                     >
                       <MessageCircle className="w-4 h-4 mr-2" />
                       Enquire on WhatsApp
@@ -1495,33 +1495,33 @@ export function Products() {
                 </div>
 
                 {/* Right Side - Technical Specifications Table */}
-                <div className="bg-secondary/30 p-8 lg:p-12 xl:p-16">
-                  <h4 className="font-serif text-xl text-foreground mb-6">
+                <div className="bg-secondary/30 p-6 sm:p-8 lg:p-12 xl:p-16 overflow-x-auto">
+                  <h4 className="font-serif text-lg sm:text-xl text-foreground mb-6">
                     Technical Specifications
                   </h4>
 
                   {/* Specifications Table */}
                   <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
+                    <table className="w-full text-xs sm:text-sm">
                       <thead>
                         <tr className="border-b border-border">
-                          <th className="py-3 px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Wattage</th>
-                          <th className="py-3 px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Outer</th>
-                          <th className="py-3 px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Cutout</th>
-                          <th className="py-3 px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Height</th>
-                          <th className="py-3 px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Beam</th>
-                          <th className="py-3 px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Color</th>
+                          <th className="py-3 px-1 sm:px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Wattage</th>
+                          <th className="py-3 px-1 sm:px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Outer</th>
+                          <th className="py-3 px-1 sm:px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Cutout</th>
+                          <th className="py-3 px-1 sm:px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Height</th>
+                          <th className="py-3 px-1 sm:px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Beam</th>
+                          <th className="py-3 px-1 sm:px-2 text-left text-xs uppercase tracking-wider text-muted-foreground font-medium">Color</th>
                         </tr>
                       </thead>
                       <tbody>
                         {product.specs.map((spec, idx) => (
                           <tr key={idx} className="border-b border-border/50">
-                            <td className="py-4 px-2 text-foreground font-medium">{spec.wattage}</td>
-                            <td className="py-4 px-2 text-muted-foreground">{spec.outer}</td>
-                            <td className="py-4 px-2 text-muted-foreground">{spec.cutout}</td>
-                            <td className="py-4 px-2 text-muted-foreground">{spec.height}</td>
-                            <td className="py-4 px-2 text-muted-foreground">{spec.beamAngle}</td>
-                            <td className="py-4 px-2 text-muted-foreground">{spec.bodyColor}</td>
+                            <td className="py-4 px-1 sm:px-2 text-foreground font-medium">{spec.wattage}</td>
+                            <td className="py-4 px-1 sm:px-2 text-muted-foreground">{spec.outer}</td>
+                            <td className="py-4 px-1 sm:px-2 text-muted-foreground">{spec.cutout}</td>
+                            <td className="py-4 px-1 sm:px-2 text-muted-foreground">{spec.height}</td>
+                            <td className="py-4 px-1 sm:px-2 text-muted-foreground">{spec.beamAngle}</td>
+                            <td className="py-4 px-1 sm:px-2 text-muted-foreground">{spec.bodyColor}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -1536,6 +1536,42 @@ export function Products() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Showroom & Contact Info */}
+        <div className="mt-20 lg:mt-28 pt-16 lg:pt-20 border-t border-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Showroom Address */}
+            <div className="text-center md:text-left">
+              <h3 className="font-serif text-xl lg:text-2xl text-foreground mb-4">
+                Visit Our Showroom
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                24, DWARKESH INDUSTRIAL SOCIETY,<br />
+                VELOBA TILES STREET,<br />
+                NR NAVJIVAN CIRCLE UDHNA MAGDALLA ROAD,<br />
+                SURAT-395017 GUJARAT, INDIA
+              </p>
+            </div>
+
+            {/* Instagram */}
+            <div className="text-center md:text-right">
+              <h3 className="font-serif text-xl lg:text-2xl text-foreground mb-4">
+                Follow Us
+              </h3>
+              <a 
+                href="https://www.instagram.com/jjlight.in?igsh=d2pyaDRteXZwbHRl" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block text-primary hover:text-primary/80 transition-colors duration-300"
+              >
+                <p className="text-muted-foreground mb-2">Instagram</p>
+                <p className="text-foreground font-medium hover:underline">
+                  @jjlight.in
+                </p>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
