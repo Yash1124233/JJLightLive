@@ -26,6 +26,7 @@ import matrixImg from '@/assets/products/matrix.png';
 import parkarImg from '@/assets/products/parkar.png';
 import beltonImg from '@/assets/products/belton.png';
 import streakImg from '@/assets/products/streak.png';
+
 import zudioImg from '@/assets/products/zudio.png';
 import nexonImg from '@/assets/products/nexon.png';
 import battlerImg from '@/assets/products/battler.png';
