@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 export function ProductsTeaser() {
   return (
@@ -13,7 +14,7 @@ export function ProductsTeaser() {
             </p>
             <div className="mt-10">
               <Button asChild variant="luxury">
-                <a href="/products">View Products</a>
+                <Link to="/products">View Products</Link>
               </Button>
             </div>
           </div>
