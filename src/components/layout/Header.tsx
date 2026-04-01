@@ -31,17 +31,21 @@ export function Header() {
   const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith('#')) return;
 
-    // When not on the homepage, route back to home with the hash.
+    e.preventDefault();
+    const targetId = href.slice(1);
+
+    const scrollToTarget = () => {
+      const el = document.getElementById(targetId);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     if (location.pathname !== '/') {
-      e.preventDefault();
-      navigate(`/${href}`);
+      navigate('/');
+      window.setTimeout(scrollToTarget, 100);
       return;
     }
 
-    // On the homepage, smooth-scroll to section.
-    e.preventDefault();
-    const el = document.getElementById(href.slice(1));
-    el?.scrollIntoView({ behavior: 'smooth' });
+    scrollToTarget();
   };
 
   return (

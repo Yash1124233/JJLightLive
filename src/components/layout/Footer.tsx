@@ -1,4 +1,6 @@
 import { Instagram, Linkedin, Mail } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import type { MouseEvent } from 'react';
 
 const footerLinks = [
   {
@@ -32,6 +34,28 @@ const footerLinks = [
 ];
 
 export function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleFooterHash = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) return;
+    e.preventDefault();
+
+    const targetId = href.slice(1);
+    const scrollToTarget = () => {
+      const el = document.getElementById(targetId);
+      el?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      window.setTimeout(scrollToTarget, 100);
+      return;
+    }
+
+    scrollToTarget();
+  };
+
   return (
     <footer className="bg-foreground text-primary-foreground">
       <div className="container mx-auto px-6 lg:px-12 py-16 lg:py-24">
@@ -74,12 +98,22 @@ export function Footer() {
               <ul className="space-y-4">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a 
-                      href={link.href} 
-                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('#') ? (
+                      <a
+                        href={link.href}
+                        onClick={(e) => handleFooterHash(e, link.href)}
+                        className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
