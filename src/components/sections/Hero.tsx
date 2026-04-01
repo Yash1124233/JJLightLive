@@ -1,8 +1,30 @@
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import type { MouseEvent } from 'react';
 import heroImage from '@/assets/hero-lighting.jpg';
 
 export function Hero() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const onSectionClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      window.setTimeout(() => scrollTo(id), 120);
+      return;
+    }
+
+    scrollTo(id);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -40,10 +62,10 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.8s' }}>
             <Button variant="hero" asChild>
-              <a href="#projects">View Our Work</a>
+              <a href="#projects" onClick={(e) => onSectionClick(e, 'projects')}>View Our Work</a>
             </Button>
             <Button variant="heroOutline" className="border-charcoal/40 hover:border-charcoal" asChild>
-              <a href="#brochure">Download Brochure</a>
+              <a href="#brochure" onClick={(e) => onSectionClick(e, 'brochure')}>Download Brochure</a>
             </Button>
           </div>
         </div>
