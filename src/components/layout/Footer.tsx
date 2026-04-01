@@ -26,7 +26,7 @@ const footerLinks = [
       { label: 'Contact Us', href: '#contact' },
       { label: 'Showroom', href: '#contact' },
       { label: 'Brochure', href: '#brochure' },
-      { label: 'Press', href: '#' },
+      { label: 'Press', href: '#contact' },
     ],
   },
 ];
@@ -53,7 +53,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/jj-light/" 
                 className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:border-champagne hover:text-champagne transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
@@ -93,10 +93,10 @@ export function Footer() {
             © 2025 JJ LIGHT. All rights reserved.
           </p>
           <div className="flex gap-8 text-sm">
-            <a href="#" className="text-primary-foreground/40 hover:text-primary-foreground transition-colors">
+            <a href="#/privacy-policy" className="text-primary-foreground/40 hover:text-primary-foreground transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-primary-foreground/40 hover:text-primary-foreground transition-colors">
+            <a href="#/terms-of-service" className="text-primary-foreground/40 hover:text-primary-foreground transition-colors">
               Terms of Service
             </a>
           </div>
