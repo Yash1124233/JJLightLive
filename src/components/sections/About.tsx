@@ -5,7 +5,7 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Column */}
           <div>
-            <span className="label-uppercase text-primary mb-4 block">About JJ LIGHT</span>
+            <span className="label-uppercase text-primary mb-4 block">About JJ A LIGHTING CO.</span>
             <h2 className="heading-section text-foreground mb-8">
               Where Architecture
               <br />
@@ -17,7 +17,7 @@ export function About() {
           {/* Right Column */}
           <div className="space-y-6">
             <p className="body-large text-muted-foreground">
-              At JJ LIGHT, we believe lighting is not just about illumination—it's about creating experiences. 
+              At JJ A LIGHTING CO., we believe lighting is not just about illumination—it's about creating experiences. 
               For over a decade, we've been crafting bespoke lighting solutions that transform spaces into 
               living works of art.
             </p>

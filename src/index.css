@@ -6,6 +6,12 @@
 
 @layer base {
   :root {
+    --bg-primary: #F6F4EE;
+    --bg-surface: #EDE8DF;
+    --bg-surface-elevated: #E3DDD1;
+    --border-subtle: rgba(22, 21, 19, 0.12);
+    --text-primary: #161513;
+    --text-muted: #68635A;
     /* Luxury warm palette */
     --background: 40 20% 98%;
     --foreground: 30 10% 15%;

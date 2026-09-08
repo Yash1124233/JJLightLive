@@ -22,7 +22,7 @@ export function Brochure() {
             <div>
               <span className="label-uppercase text-champagne mb-4 block">2025 Collection</span>
               <h2 className="heading-section mb-6">
-                JJ LIGHT
+                JJ A LIGHTING CO.
                 <br />
                 <span className="italic">Brochure</span>
               </h2>
@@ -45,7 +45,7 @@ export function Brochure() {
               <div className="relative w-full max-w-sm mx-auto lg:mx-0 lg:ml-auto aspect-[3/4] rounded-sm shadow-2xl overflow-hidden group cursor-pointer" onClick={handleDownload}>
                 <img 
                   src={brochureCover} 
-                  alt="JJ Light 2025 Brochure Cover" 
+                  alt="JJ A LIGHTING CO. 2025 Brochure Cover" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">

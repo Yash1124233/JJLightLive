@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-4">Introduction</h2>
               <p className="leading-relaxed">
-                JJ LIGHT ("we," "us," or "our") operates the website. This page informs you of our policies 
+                JJ A LIGHTING CO. ("we," "us," or "our") operates the website. This page informs you of our policies 
                 regarding the collection, use, and disclosure of personal data when you use our Service and 
                 the choices you have associated with that data.
               </p>
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
 
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-4">Use of Data</h2>
-              <p className="leading-relaxed mb-4">JJ LIGHT uses the collected data for various purposes:</p>
+              <p className="leading-relaxed mb-4">JJ A LIGHTING CO. uses the collected data for various purposes:</p>
               <ul className="list-disc list-inside space-y-2">
                 <li>To provide and maintain our Service</li>
                 <li>To notify you about changes to our Service</li>
@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <p className="mt-4">
-                <span className="font-semibold">JJ LIGHT</span><br />
+                <span className="font-semibold">JJ A LIGHTING CO.</span><br />
                 Email: jjlight.in@gmail.com<br />
                 Website: www.jjlight.in
               </p>

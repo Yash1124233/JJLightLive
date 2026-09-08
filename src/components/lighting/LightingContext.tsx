@@ -12,24 +12,31 @@ const clampIntensity = (intensity: number) => Math.min(1, Math.max(0.1, intensit
 
 export function LightingProvider({ children }: { children: ReactNode }) {
   const [isNightMode, setIsNightMode] = useState(true);
-  const [lightIntensity, setLightIntensityState] = useState(0.72);
+  const [lightIntensity, setLightIntensityState] = useState(0.7);
 
   useEffect(() => {
     const root = document.documentElement;
     root.dataset.lighting = isNightMode ? 'night' : 'day';
-    root.style.setProperty('--lighting-bg', isNightMode ? '#080808' : '#F5F2EB');
-    root.style.setProperty('--lighting-surface', isNightMode ? '#141312' : '#ECE7DE');
+    root.style.setProperty('--lighting-bg', isNightMode ? '#080808' : '#F6F4EE');
+    root.style.setProperty('--lighting-surface', isNightMode ? '#141312' : '#EDE8DF');
     root.style.setProperty('--lighting-text', isNightMode ? '#F5F2EB' : '#161513');
-    root.style.setProperty('--lighting-muted', isNightMode ? '#8E8A83' : '#8C8275');
-    root.style.setProperty('--lighting-border', isNightMode ? '#242220' : '#D8D0C4');
+    root.style.setProperty('--lighting-muted', isNightMode ? '#8E8A83' : '#68635A');
+    root.style.setProperty('--lighting-border', isNightMode ? '#242220' : 'rgba(22, 21, 19, 0.12)');
+    root.style.setProperty('--bg-primary', isNightMode ? '#080808' : '#F6F4EE');
+    root.style.setProperty('--bg-surface', isNightMode ? '#141312' : '#EDE8DF');
+    root.style.setProperty('--bg-surface-elevated', isNightMode ? '#1B1917' : '#E3DDD1');
+    root.style.setProperty('--border-subtle', isNightMode ? '#242220' : 'rgba(22, 21, 19, 0.12)');
+    root.style.setProperty('--text-primary', isNightMode ? '#F5F2EB' : '#161513');
+    root.style.setProperty('--text-muted', isNightMode ? '#8E8A83' : '#68635A');
     root.style.setProperty('--lighting-glow', isNightMode ? '#FFB35A' : '#8C8275');
     root.style.setProperty('--light-intensity', String(lightIntensity));
-    root.style.setProperty('--background', isNightMode ? '0 0% 3%' : '40 20% 94%');
+    root.style.setProperty('--stair-glow', isNightMode ? String(lightIntensity * 0.85) : '0.08');
+    root.style.setProperty('--background', isNightMode ? '0 0% 3%' : '40 20% 96%');
     root.style.setProperty('--foreground', isNightMode ? '40 15% 92%' : '30 10% 8%');
     root.style.setProperty('--card', isNightMode ? '30 5% 8%' : '40 15% 90%');
     root.style.setProperty('--card-foreground', isNightMode ? '40 15% 92%' : '30 10% 8%');
-    root.style.setProperty('--border', isNightMode ? '30 5% 14%' : '35 15% 82%');
-    root.style.setProperty('--muted-foreground', isNightMode ? '35 7% 54%' : '30 8% 45%');
+    root.style.setProperty('--border', isNightMode ? '30 5% 14%' : '30 10% 78%');
+    root.style.setProperty('--muted-foreground', isNightMode ? '35 7% 54%' : '30 6% 39%');
   }, [isNightMode, lightIntensity]);
 
   const value = useMemo(() => ({

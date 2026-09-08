@@ -34,9 +34,9 @@ export function WhyChoose() {
       <div className="container mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-24">
-          <span className="label-uppercase text-primary mb-4 block">Why JJ LIGHT</span>
+          <span className="label-uppercase text-primary mb-4 block">Why JJ A LIGHTING CO.</span>
           <h2 className="heading-section text-foreground mb-6">
-            The JJ LIGHT
+            The JJ A LIGHTING CO.
             <br />
             <span className="italic">Difference</span>
           </h2>
