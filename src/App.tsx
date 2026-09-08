@@ -8,12 +8,14 @@ import ProductsPage from "./pages/Products";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import { LightingProvider } from "@/components/lighting/LightingContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+  <LightingProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
       <Toaster />
       <Sonner />
       <HashRouter>
@@ -26,8 +28,9 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </LightingProvider>
 );
 
 export default App;

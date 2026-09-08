@@ -132,6 +132,8 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
+    background-color: var(--lighting-bg);
+    transition: background-color 700ms ease, color 700ms ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -169,6 +171,46 @@
     @apply text-xs uppercase tracking-[0.2em] font-medium;
     font-family: 'Inter', sans-serif;
   }
+
+  .collection-card {
+    background: var(--lighting-surface);
+    transition: border-color 500ms ease, transform 500ms ease;
+  }
+
+  .collection-card:hover {
+    border-color: color-mix(in srgb, var(--lighting-glow) 55%, var(--lighting-border));
+    transform: translateY(-6px);
+  }
+
+  .collection-scene {
+    background: radial-gradient(ellipse at 50% 40%, rgba(255, 179, 90, 0.09), transparent 28%), linear-gradient(145deg, #1a1815, #0b0b0a 62%);
+    transition: background 700ms ease;
+  }
+
+  .collection-card:hover .collection-scene {
+    background: radial-gradient(ellipse at 50% 42%, rgba(255, 179, 90, 0.25), transparent 42%), linear-gradient(145deg, #211c17, #0b0b0a 62%);
+  }
+
+  .collection-fixture {
+    border-radius: 45% 45% 35% 35%;
+    background: linear-gradient(110deg, #4b3522, #ffc982 48%, #5a3a22);
+    box-shadow: 0 0 12px rgba(255, 179, 90, 0.18), 0 50px 80px rgba(255, 179, 90, 0.04);
+    filter: brightness(0.2);
+    transition: filter 700ms ease, box-shadow 700ms ease, transform 700ms ease;
+  }
+
+  .collection-card:hover .collection-fixture {
+    filter: brightness(1);
+    box-shadow: 0 0 24px rgba(255, 179, 90, 0.8), 0 80px 130px rgba(255, 179, 90, 0.28);
+    transform: translateX(-50%) scale(1.04);
+  }
+
+  @keyframes markPulse {
+    0%, 100% { opacity: 0.65; filter: drop-shadow(0 0 2px var(--lighting-glow)); }
+    50% { opacity: 1; filter: drop-shadow(0 0 8px var(--lighting-glow)); }
+  }
+
+  .animate-mark-pulse { animation: markPulse 2.8s ease-in-out infinite; }
 
   /* Luxury card styling */
   .luxury-card {

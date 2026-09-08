@@ -9,6 +9,7 @@ import { Process } from '@/components/sections/Process';
 import { Brochure } from '@/components/sections/Brochure';
 import { WhyChoose } from '@/components/sections/WhyChoose';
 import { Contact } from '@/components/sections/Contact';
+import { CollectionGrid } from '@/components/sections/CollectionGrid';
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <CollectionGrid />
         <About />
         <Solutions />
         <ProductsTeaser />

@@ -67,10 +67,25 @@ export default {
           light: "hsl(var(--charcoal-light))",
         },
         "warm-gray": "hsl(var(--warm-gray))",
+        lighting: {
+          bg: "var(--lighting-bg)",
+          surface: "var(--lighting-surface)",
+          text: "var(--lighting-text)",
+          muted: "var(--lighting-muted)",
+          glow: "var(--lighting-glow)",
+        },
       },
       fontFamily: {
         serif: ["'Playfair Display'", "serif"],
         sans: ["'Inter'", "sans-serif"],
+      },
+      dropShadow: {
+        "amber-glow": "0 0 18px rgba(255, 179, 90, 0.65)",
+        "amber-glow-lg": "0 0 42px rgba(255, 179, 90, 0.42)",
+      },
+      boxShadow: {
+        "amber-glow": "0 0 24px rgba(255, 179, 90, 0.42)",
+        "amber-glow-lg": "0 0 70px rgba(255, 179, 90, 0.3)",
       },
       borderRadius: {
         lg: "var(--radius)",
