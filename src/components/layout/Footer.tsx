@@ -1,7 +1,6 @@
 import { Instagram, Linkedin, Mail } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import type { MouseEvent } from 'react';
-import { JJLogo } from '@/components/JJLogo';
 
 const footerLinks = [
   {
@@ -63,8 +62,8 @@ export function Footer() {
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#" className="mb-6 inline-block text-[#F6F4EE]">
-              <JJLogo className="h-20 w-auto" />
+            <a href="#" className="mb-6 inline-block">
+              <img src="/images/logo.png" alt="JJ A Lighting Co." className="h-16 w-auto" />
             </a>
             <p className="mb-8 max-w-sm leading-relaxed text-[#F6F4EE]/75">
               Crafting bespoke lighting solutions for architects, designers, and 
